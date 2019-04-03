@@ -1,0 +1,6 @@
+//Amber Liu
+//al7bf
+//difficulties.txt
+//09/18/2018
+
+When I first ran the files, errors keeps on happening with the testPostfixCalc where "no member named 'add' in 'stack'" and other operators. I went to change the operator functions in the postfixCalculator.cpp but it still caused the same errors, then i realized that the error lies within my declaration, where it was stack p, but it should have been postfixCalculator p. After this, another error came up, and it was still "no member named 'push' and 'top' in postfixCalculator"error. But I was able to fix the problem by realizing that i named the function wrong, and it should have been pushnum and gettop instead. Overall, I think this assignment was mainly difficult in implementing the stack class and the testPostfixCalc without confusing the function names that i wrote. 

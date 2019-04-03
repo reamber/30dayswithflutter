@@ -1,0 +1,6 @@
+//Amber Liu, al7bf, lifecycle.questions.txt, 09/04/2018
+//question about the LifeCycle program
+
+1. what is a destructor?
+2. why is there & in variable names?
+3. what does the * do?

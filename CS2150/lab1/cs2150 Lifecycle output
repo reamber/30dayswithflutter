@@ -1,0 +1,92 @@
+d-172-25-219-92:~ AmberLiu$ git clone https://github.com/uva-cs/pdr.git
+Cloning into 'pdr'...
+remote: Counting objects: 12307, done.
+remote: Compressing objects: 100% (225/225), done.
+remote: Total 12307 (delta 122), reused 140 (delta 55), pack-reused 12021
+Receiving objects: 100% (12307/12307), 54.41 MiB | 5.45 MiB/s, done.
+Resolving deltas: 100% (8750/8750), done.
+d-172-25-219-92:~ AmberLiu$ git pull
+fatal: Not a git repository (or any of the parent directories): .git
+d-172-25-219-92:~ AmberLiu$ file:///home/al7bf/pdr/readme.html
+-bash: file:///home/al7bf/pdr/readme.html: No such file or directory
+d-172-25-219-92:~ AmberLiu$ pdw
+-bash: pdw: command not found
+d-172-25-219-92:~ AmberLiu$ pwd
+/Users/AmberLiu
+d-172-25-219-92:~ AmberLiu$ ls
+Applications		Library			pdr
+CS2150			Movies			pslog.txt
+Creative Cloud Files	Music			skyview
+Desktop			Pictures		wekafiles
+Documents		Public
+Downloads		eclipse
+d-172-25-219-92:~ AmberLiu$ cd CS2150
+d-172-25-219-92:CS2150 AmberLiu$ ls
+a.out		helloworld.cpp	lifecycle.cp	xToN.cpp
+d-172-25-219-92:CS2150 AmberLiu$ clang++ lifecycle.cpp
+clang: error: no such file or directory: 'lifecycle.cpp'
+clang: error: no input files
+d-172-25-219-92:CS2150 AmberLiu$ clang++ lifecycle.cp
+d-172-25-219-92:CS2150 AmberLiu$ clang++ lifecycle.cpp
+d-172-25-219-92:CS2150 AmberLiu$ ./a.out
+MyObject Default constructor: ("I'm static, outside of main",1)
+--PART 1: Start of main--
+--Defining o1, o2(Bob)--
+MyObject Default constructor: ("--default--",2)
+MyObject Default constructor: ("Bob",3)
+--Defining o3(o2)--
+MyObject Copy constructor:    ("Bob",4)
+--Defining array of 3 objects--
+MyObject Default constructor: ("--default--",5)
+MyObject Default constructor: ("--default--",6)
+MyObject Default constructor: ("--default--",7)
+
+--PART 2: call function using call-by-value, return int--
+MyObject Copy constructor:    ("--default--",8)
+MyObject Copy constructor:    ("Bob",9)
+MyObject Destructor:          ("Bob",9)
+MyObject Destructor:          ("--default--",8)
+--call function using call-by-value, return MyObject--
+MyObject Copy constructor:    ("--default--",10)
+MyObject Copy constructor:    ("Bob",11)
+MyObject Copy constructor:    ("Bob",12)
+MyObject Destructor:          ("Bob",12)
+MyObject Destructor:          ("Bob",11)
+MyObject Destructor:          ("--default--",10)
+
+--PART 3:  o1: ("--default--",2)
+  --entering new block, define new o1(Sally)--
+MyObject Default constructor: ("Sally",13)
+  o1: ("Sally",13)	o2: ("Bob",3)
+  --call swap function using call-by-reference--
+MyObject Copy constructor:    ("Sally",14)
+MyObject Destructor:          ("Sally",14)
+  --were their values swapped?--
+  o1: ("Bob",13)	o2: ("Sally",3)
+  --leaving new block--
+MyObject Destructor:          ("Bob",13)
+o1: ("--default--",2)
+
+--PART 4: Define reference var.: { MyObject& oref=o1; } --
+-- was anything constructed/destructed?--
+
+--PART 5: new and delete--
+--use new to create one object, then array of 2 objects--
+MyObject Default constructor: ("--default--",15)
+MyObject Default constructor: ("--default--",16)
+MyObject Default constructor: ("--default--",17)
+--use delete to remove that one object--
+MyObject Destructor:          ("--default--",15)
+--use delete [] to remove that array of 2 objects --
+MyObject Destructor:          ("--default--",17)
+MyObject Destructor:          ("--default--",16)
+
+--LAST PART:  End of main--
+MyObject Destructor:          ("--default--",7)
+MyObject Destructor:          ("--default--",6)
+MyObject Destructor:          ("--default--",5)
+MyObject Destructor:          ("Bob",4)
+MyObject Destructor:          ("Sally",3)
+MyObject Destructor:          ("--default--",2)
+MyObject Destructor:          ("I'm static, outside of main",1)
+d-172-25-219-92:CS2150 AmberLiu$ 

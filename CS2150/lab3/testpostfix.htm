@@ -1,0 +1,60 @@
+
+<!-- saved from url=(0129)https://libra.cs.virginia.edu/~pedagogy/submit.php?function=getfile&userid=al7bf&assignment=908&filename=testPostfixCalc.cpp.html -->
+<html class="gr__libra_cs_virginia_edu"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body data-gr-c-s-loaded="true"><pre><tt><i><font color="#9A1900">//Amber Liu</font></i>
+<i><font color="#9A1900">//al7bf</font></i>
+<i><font color="#9A1900">//testPostfixCalc.cpp</font></i>
+<i><font color="#9A1900">//09/15/2018</font></i>
+
+<b><font color="#000080">#include</font></b> <font color="#FF0000">&lt;iostream&gt;</font>
+<b><font color="#000080">#include</font></b> <font color="#FF0000">&lt;stack&gt;</font>
+<b><font color="#000080">#include</font></b> <font color="#FF0000">&lt;cstdlib&gt;</font>
+<b><font color="#000080">#include</font></b> <font color="#FF0000">"postfixCalculator.h"</font>
+<b><font color="#0000FF">using</font></b> <b><font color="#0000FF">namespace</font></b> std<font color="#990000">;</font>
+
+<font color="#009900">int</font> <b><font color="#000000">main</font></b><font color="#990000">()</font> <font color="#FF0000">{</font>
+    <font color="#008080">postfixCalculator</font> p<font color="#990000">;</font>
+    p<font color="#990000">.</font><b><font color="#000000">push</font></b><font color="#990000">(</font><font color="#993399">1</font><font color="#990000">);</font>
+    p<font color="#990000">.</font><b><font color="#000000">push</font></b><font color="#990000">(</font><font color="#993399">2</font><font color="#990000">);</font>
+    p<font color="#990000">.</font><b><font color="#000000">push</font></b><font color="#990000">(</font><font color="#993399">3</font><font color="#990000">);</font>
+    p<font color="#990000">.</font><b><font color="#000000">push</font></b><font color="#990000">(</font><font color="#993399">4</font><font color="#990000">);</font>
+    p<font color="#990000">.</font><b><font color="#000000">push</font></b><font color="#990000">(</font><font color="#993399">5</font><font color="#990000">);</font>
+    p<font color="#990000">.</font><b><font color="#000000">add</font></b><font color="#990000">();</font>
+    p<font color="#990000">.</font><b><font color="#000000">add</font></b><font color="#990000">();</font>
+    p<font color="#990000">.</font><b><font color="#000000">add</font></b><font color="#990000">();</font>
+    p<font color="#990000">.</font><b><font color="#000000">add</font></b><font color="#990000">();</font>
+    cout <font color="#990000">&lt;&lt;</font> <font color="#FF0000">"Result of adding is: "</font> <font color="#990000">&lt;&lt;</font> p<font color="#990000">.</font><b><font color="#000000">top</font></b><font color="#990000">()</font> <font color="#990000">&lt;&lt;</font> endl<font color="#990000">;</font>
+    
+    <font color="#008080">postfixCalculator</font> p1<font color="#990000">;</font>
+    p1<font color="#990000">.</font><b><font color="#000000">push</font></b><font color="#990000">(</font><font color="#993399">1</font><font color="#990000">);</font>
+    p1<font color="#990000">.</font><b><font color="#000000">push</font></b><font color="#990000">(</font><font color="#993399">2</font><font color="#990000">);</font>
+    p1<font color="#990000">.</font><b><font color="#000000">push</font></b><font color="#990000">(</font><font color="#993399">3</font><font color="#990000">);</font>
+    p1<font color="#990000">.</font><b><font color="#000000">subtract</font></b><font color="#990000">();</font>
+    p1<font color="#990000">.</font><b><font color="#000000">subtract</font></b><font color="#990000">();</font>
+    cout <font color="#990000">&lt;&lt;</font> <font color="#FF0000">"Result of subtracting is: "</font> <font color="#990000">&lt;&lt;</font> p1<font color="#990000">.</font><b><font color="#000000">top</font></b><font color="#990000">()</font> <font color="#990000">&lt;&lt;</font> endl<font color="#990000">;</font>
+
+    <font color="#008080">postfixCalculator</font> p2<font color="#990000">;</font>
+    p2<font color="#990000">.</font><b><font color="#000000">push</font></b><font color="#990000">(</font><font color="#993399">1</font><font color="#990000">);</font>
+    p2<font color="#990000">.</font><b><font color="#000000">push</font></b><font color="#990000">(</font><font color="#993399">2</font><font color="#990000">);</font>
+    p2<font color="#990000">.</font><b><font color="#000000">push</font></b><font color="#990000">(</font><font color="#993399">3</font><font color="#990000">);</font>
+    p2<font color="#990000">.</font><b><font color="#000000">multiply</font></b><font color="#990000">();</font>
+    p2<font color="#990000">.</font><b><font color="#000000">multiply</font></b><font color="#990000">();</font>
+    cout <font color="#990000">&lt;&lt;</font> <font color="#FF0000">"Result of multiplying is: "</font> <font color="#990000">&lt;&lt;</font> p2<font color="#990000">.</font><b><font color="#000000">top</font></b><font color="#990000">()</font> <font color="#990000">&lt;&lt;</font> endl<font color="#990000">;</font>
+
+    <font color="#008080">postfixCalculator</font> p3<font color="#990000">;</font>
+    p3<font color="#990000">.</font><b><font color="#000000">push</font></b><font color="#990000">(</font><font color="#993399">4</font><font color="#990000">);</font>
+    p3<font color="#990000">.</font><b><font color="#000000">push</font></b><font color="#990000">(</font><font color="#993399">3</font><font color="#990000">);</font>
+    p3<font color="#990000">.</font><b><font color="#000000">push</font></b><font color="#990000">(</font><font color="#993399">2</font><font color="#990000">);</font>
+    p3<font color="#990000">.</font><b><font color="#000000">divide</font></b><font color="#990000">();</font>
+    p3<font color="#990000">.</font><b><font color="#000000">divide</font></b><font color="#990000">();</font>
+    cout <font color="#990000">&lt;&lt;</font> <font color="#FF0000">"Result of division is: "</font> <font color="#990000">&lt;&lt;</font> p3<font color="#990000">.</font><b><font color="#000000">top</font></b><font color="#990000">()</font> <font color="#990000">&lt;&lt;</font> endl<font color="#990000">;</font>
+
+    <font color="#008080">postfixCalculator</font> p4<font color="#990000">;</font>
+    p4<font color="#990000">.</font><b><font color="#000000">push</font></b><font color="#990000">(-</font><font color="#993399">5</font><font color="#990000">);</font>
+    p4<font color="#990000">.</font><b><font color="#000000">push</font></b><font color="#990000">(</font><font color="#993399">2</font><font color="#990000">);</font>
+    p4<font color="#990000">.</font><b><font color="#000000">negate</font></b><font color="#990000">();</font>
+    cout <font color="#990000">&lt;&lt;</font> <font color="#FF0000">"Result of negation is: "</font> <font color="#990000">&lt;&lt;</font> p4<font color="#990000">.</font><b><font color="#000000">top</font></b><font color="#990000">()</font> <font color="#990000">&lt;&lt;</font> endl<font color="#990000">;</font>
+
+    <b><font color="#0000FF">return</font></b> <font color="#993399">0</font><font color="#990000">;</font>
+<font color="#FF0000">}</font>
+</tt></pre>
+</body></html>

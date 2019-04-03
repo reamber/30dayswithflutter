@@ -1,0 +1,1132 @@
+Last login: Tue Sep 25 13:09:28 on ttys000
+Muchichi:~ lujiayi$ cd CS2150
+Muchichi:CS2150 lujiayi$ cd lab4
+Muchichi:lab4 lujiayi$ clang++ inlab4.cpp
+inlab4.cpp:12:40: error: use of undeclared identifier 'FLT_MAX'
+        cout << "maximum value of float: " << FLT_MAX << endl;
+                                              ^
+inlab4.cpp:13:41: error: use of undeclared identifier 'DBL_MAX'
+        cout << "maximum value of double: " << DBL_MAX << endl;
+                                               ^
+inlab4.cpp:28:2: warning: expression result unused [-Wunused-value]
+        maxValue;
+        ^~~~~~~~
+1 warning and 2 errors generated.
+Muchichi:lab4 lujiayi$ clang++ inlab4.cpp
+inlab4.cpp:19:1: warning: control reaches end of non-void function
+      [-Wreturn-type]
+}
+^
+1 warning generated.
+Muchichi:lab4 lujiayi$ clang++ inlab4.cpp
+Muchichi:lab4 lujiayi$ ./a.out
+maximum value of int: 2147483647
+maximum value of unsigned int: 4294967295
+maximum value of char: 127
+Muchichi:lab4 lujiayi$ clang++ inlab4.cpp
+Muchichi:lab4 lujiayi$ ./a.out
+maximum value of int: 2147483647
+maximum value of unsigned int: 4294967295
+maximum value of char: 127
+Muchichi:lab4 lujiayi$ clang++ inlab4.cpp
+Muchichi:lab4 lujiayi$ clang++ inlab4.cpp
+Muchichi:lab4 lujiayi$ ./a.out
+Size of int in bytes: 4
+Size of unsigned int in bytes: 4
+Size of float in bytes: 4
+Size of double in bytes: 8
+Size of char in bytes: 1
+Size of bool in bytes: 1
+Size of int* in bytes: 8
+Size of char* in bytes: 8
+Size of double* in bytes: 8
+maximum value of int: 2147483647
+maximum value of unsigned int: 4294967295
+maximum value of char: 127
+Muchichi:lab4 lujiayi$ clang++ inlab4.cpp
+Muchichi:lab4 lujiayi$ ./a.out
+Size of int in bytes: 4
+Size of unsigned int in bytes: 4
+Size of float in bytes: 4
+Size of double in bytes: 8
+Size of char in bytes: 1
+Size of bool in bytes: 1
+Size of int* in bytes: 8
+Size of char* in bytes: 8
+Size of double* in bytes: 8
+maximum value of int: 2147483647
+maximum value of unsigned int: 4294967295
+maximum value of float: 3.40282e+38
+maximum value of double: 1.79769e+308
+maximum value of char: 127
+Muchichi:lab4 lujiayi$ clang++ -g -o debug inlab4.cpp
+Muchichi:lab4 lujiayi$ lldb debug
+(lldb) target create "debug"
+Current executable set to 'debug' (x86_64).
+(lldb) run
+Process 24242 launched: '/Users/lujiayi/CS2150/lab4/debug' (x86_64)
+Size of int in bytes: 4
+Size of unsigned int in bytes: 4
+Size of float in bytes: 4
+Size of double in bytes: 8
+Size of char in bytes: 1
+Size of bool in bytes: 1
+Size of int* in bytes: 8
+Size of char* in bytes: 8
+Size of double* in bytes: 8
+maximum value of int: 2147483647
+maximum value of unsigned int: 4294967295
+maximum value of float: 3.40282e+38
+maximum value of double: 1.79769e+308
+maximum value of char: 127
+Process 24242 exited with status = 0 (0x00000000) 
+(lldb) frame var -L t
+error: invalid thread
+(lldb) quit
+Muchichi:lab4 lujiayi$ lldb debug
+(lldb) target create "debug"
+Current executable set to 'debug' (x86_64).
+(lldb) frame var -L t
+error: invalid process
+(lldb) expr --raw -- &t
+error: use of undeclared identifier 't'
+(lldb) expr --raw -- &p1
+error: use of undeclared identifier 'p1'
+(lldb) quit
+Muchichi:lab4 lujiayi$ clang++ -g -o debug inlab4.cpp
+inlab4.cpp:47:7: error: cannot initialize a variable of type 'int *' with an
+      rvalue of type 'int'
+        int* p1 = 3;
+             ^    ~
+inlab4.cpp:48:8: error: cannot initialize a variable of type 'char *' with an
+      rvalue of type 'char'
+        char* p2 = 's';
+              ^    ~~~
+inlab4.cpp:49:10: error: cannot initialize a variable of type 'double *' with an
+      rvalue of type 'double'
+        double* p3 = 3.4; 
+                ^    ~~~
+3 errors generated.
+Muchichi:lab4 lujiayi$ clang++ -g -o debug inlab4.cpp
+Muchichi:lab4 lujiayi$ lldb debug
+(lldb) target create "debug"
+Current executable set to 'debug' (x86_64).
+(lldb) expr --raw -- &p1
+error: use of undeclared identifier 'p1'
+(lldb) quit
+Muchichi:lab4 lujiayi$ clang++ -g -o debug inlab4.cpp
+inlab4.cpp:50:7: error: cannot initialize a variable of type 'int *' with an
+      lvalue of type 'int'
+        int* p1 = x1;
+             ^    ~~
+inlab4.cpp:51:8: error: cannot initialize a variable of type 'char *' with an
+      lvalue of type 'char'
+        char* p2 = x2;
+              ^    ~~
+inlab4.cpp:52:10: error: cannot initialize a variable of type 'double *' with an
+      lvalue of type 'double'
+        double* p3 = x3; 
+                ^    ~~
+3 errors generated.
+Muchichi:lab4 lujiayi$ clang++ -g -o debug inlab4.cpp
+Muchichi:lab4 lujiayi$ lldb debug
+(lldb) target create "debug"
+Current executable set to 'debug' (x86_64).
+(lldb) expr --raw -- p1
+error: use of undeclared identifier 'p1'
+(lldb) quit
+Muchichi:lab4 lujiayi$ clang ++ inlab4.cpp
+clang: error: no such file or directory: '++'
+Muchichi:lab4 lujiayi$ clang++ inlab4.cpp
+Muchichi:lab4 lujiayi$ ./a.out
+Size of int in bytes: 4
+Size of unsigned int in bytes: 4
+Size of float in bytes: 4
+Size of double in bytes: 8
+Size of char in bytes: 1
+Size of bool in bytes: 1
+Size of int* in bytes: 8
+Size of char* in bytes: 8
+Size of double* in bytes: 8
+maximum value of int: 2147483647
+maximum value of unsigned int: 4294967295
+maximum value of float: 3.40282e+38
+maximum value of double: 1.79769e+308
+maximum value of char: 127
+0x7ffee260aa74
+???
+0x7ffee260aa68
+Muchichi:lab4 lujiayi$ clang++ inlab4.cpp
+inlab4.cpp:48:12: warning: multi-character character constant [-Wmultichar]
+        char x2 = '127';
+                  ^
+inlab4.cpp:48:12: warning: implicit conversion from 'int' to 'char' changes
+      value from 3224119 to 55 [-Wconstant-conversion]
+        char x2 = '127';
+             ~~   ^~~~~
+2 warnings generated.
+Muchichi:lab4 lujiayi$ clang++ -Wall -g -o debug inlab4.cpp
+inlab4.cpp:45:7: warning: unused variable 't' [-Wunused-variable]
+        bool t = true;
+             ^
+inlab4.cpp:46:7: warning: unused variable 'f' [-Wunused-variable]
+        bool f = false;
+             ^
+2 warnings generated.
+Muchichi:lab4 lujiayi$ lldb debug
+(lldb) target create "debug"
+Current executable set to 'debug' (x86_64).
+(lldb) expr --raw -- p1
+error: use of undeclared identifier 'p1'
+(lldb) frame var -L p1
+error: invalid process
+(lldb) quit
+Muchichi:lab4 lujiayi$ clang++ -Wall -g -o debug inlab4.cpp
+inlab4.cpp:69:7: warning: unused variable 'CharArray2D' [-Wunused-variable]
+        char CharArray2D[6][5];
+             ^
+inlab4.cpp:59:7: warning: unused variable 'CharArray' [-Wunused-variable]
+        char CharArray[10] = {'a','b','c','d','e','f','g','h','i','j'};;
+             ^
+inlab4.cpp:48:8: warning: unused variable 'p2' [-Wunused-variable]
+        char* p2 = &x2;
+              ^
+inlab4.cpp:43:7: warning: unused variable 'f' [-Wunused-variable]
+        bool f = false;
+             ^
+inlab4.cpp:42:7: warning: unused variable 't' [-Wunused-variable]
+        bool t = true;
+             ^
+inlab4.cpp:49:10: warning: unused variable 'p3' [-Wunused-variable]
+        double* p3 = &x3; 
+                ^
+inlab4.cpp:47:7: warning: unused variable 'p1' [-Wunused-variable]
+        int* p1 = &x1;
+             ^
+7 warnings generated.
+Muchichi:lab4 lujiayi$ clang++ -Wall -g -o debug inlab4.cpp
+inlab4.cpp:77:15: error: expected ';' at end of declaration
+        char in = '0'
+                     ^
+                     ;
+1 error generated.
+Muchichi:lab4 lujiayi$ clang++ -Wall -g -o debug inlab4.cpp
+inlab4.cpp:43:7: warning: unused variable 'f' [-Wunused-variable]
+        bool f = false;
+             ^
+inlab4.cpp:69:7: warning: unused variable 'CharArray2D' [-Wunused-variable]
+        char CharArray2D[6][5];
+             ^
+inlab4.cpp:48:8: warning: unused variable 'p2' [-Wunused-variable]
+        char* p2 = &x2;
+              ^
+inlab4.cpp:42:7: warning: unused variable 't' [-Wunused-variable]
+        bool t = true;
+             ^
+inlab4.cpp:59:7: warning: unused variable 'CharArray' [-Wunused-variable]
+        char CharArray[10] = {'a','b','c','d','e','f','g','h','i','j'};;
+             ^
+inlab4.cpp:47:7: warning: unused variable 'p1' [-Wunused-variable]
+        int* p1 = &x1;
+             ^
+inlab4.cpp:49:10: warning: unused variable 'p3' [-Wunused-variable]
+        double* p3 = &x3; 
+                ^
+7 warnings generated.
+Muchichi:lab4 lujiayi$ ./a.out
+Size of int in bytes: 4
+Size of unsigned int in bytes: 4
+Size of float in bytes: 4
+Size of double in bytes: 8
+Size of char in bytes: 1
+Size of bool in bytes: 1
+Size of int* in bytes: 8
+Size of char* in bytes: 8
+Size of double* in bytes: 8
+maximum value of int: 2147483647
+maximum value of unsigned int: 4294967295
+maximum value of float: 3.40282e+38
+maximum value of double: 1.79769e+308
+maximum value of char: 127
+0x7ffeebf6ca74
+7???
+0x7ffeebf6ca68
+Muchichi:lab4 lujiayi$ clang++ inlab4.cpp
+Muchichi:lab4 lujiayi$ ./a.out
+Size of int in bytes: 4
+Size of unsigned int in bytes: 4
+Size of float in bytes: 4
+Size of double in bytes: 8
+Size of char in bytes: 1
+Size of bool in bytes: 1
+Size of int* in bytes: 8
+Size of char* in bytes: 8
+Size of double* in bytes: 8
+maximum value of int: 2147483647
+maximum value of unsigned int: 4294967295
+maximum value of float: 3.40282e+38
+maximum value of double: 1.79769e+308
+maximum value of char: 127
+1
+2
+3
+4
+5
+6
+7
+8
+9
+:
+;
+<
+=
+>
+?
+@
+A
+B
+C
+D
+E
+F
+G
+H
+I
+J
+K
+L
+M
+N
+Abort trap: 6
+Muchichi:lab4 lujiayi$ clang++ -Wall -g -o debug inlab4.cpp
+inlab4.cpp:69:7: warning: unused variable 'CharArray2D' [-Wunused-variable]
+        char CharArray2D[6][5];
+             ^
+inlab4.cpp:49:10: warning: unused variable 'p3' [-Wunused-variable]
+        double* p3 = &x3; 
+                ^
+inlab4.cpp:47:7: warning: unused variable 'p1' [-Wunused-variable]
+        int* p1 = &x1;
+             ^
+inlab4.cpp:42:7: warning: unused variable 't' [-Wunused-variable]
+        bool t = true;
+             ^
+inlab4.cpp:48:8: warning: unused variable 'p2' [-Wunused-variable]
+        char* p2 = &x2;
+              ^
+inlab4.cpp:59:7: warning: unused variable 'CharArray' [-Wunused-variable]
+        char CharArray[10] = {'a','b','c','d','e','f','g','h','i','j'};;
+             ^
+inlab4.cpp:43:7: warning: unused variable 'f' [-Wunused-variable]
+        bool f = false;
+             ^
+7 warnings generated.
+Muchichi:lab4 lujiayi$ lldb debug
+(lldb) target create "debug"
+Current executable set to 'debug' (x86_64).
+(lldb) run
+Process 24863 launched: '/Users/lujiayi/CS2150/lab4/debug' (x86_64)
+Size of int in bytes: 4
+Size of unsigned int in bytes: 4
+Size of float in bytes: 4
+Size of double in bytes: 8
+Size of char in bytes: 1
+Size of bool in bytes: 1
+Size of int* in bytes: 8
+Size of char* in bytes: 8
+Size of double* in bytes: 8
+maximum value of int: 2147483647
+maximum value of unsigned int: 4294967295
+maximum value of float: 3.40282e+38
+maximum value of double: 1.79769e+308
+maximum value of char: 127
+Process 24863 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = signal SIGABRT
+    frame #0: 0x00007fff778b5b66 libsystem_kernel.dylib`__pthread_kill + 10
+libsystem_kernel.dylib`__pthread_kill:
+->  0x7fff778b5b66 <+10>: jae    0x7fff778b5b70            ; <+20>
+    0x7fff778b5b68 <+12>: movq   %rax, %rdi
+    0x7fff778b5b6b <+15>: jmp    0x7fff778acae9            ; cerror_nocancel
+    0x7fff778b5b70 <+20>: retq   
+Target 0: (debug) stopped.
+(lldb) memory read p1
+error: invalid start address expression.
+error: address expression "p1" evaluation failed
+(lldb) memory read `p1`
+error: error: use of undeclared identifier 'p1'
+
+(lldb) b 47
+Breakpoint 1: where = debug`main + 113 at inlab4.cpp:47, address = 0x0000000100000d51
+(lldb) run
+There is a running process, kill it and restart?: [Y/n] y
+Process 24863 exited with status = 9 (0x00000009) 
+Process 24874 launched: '/Users/lujiayi/CS2150/lab4/debug' (x86_64)
+Size of int in bytes: 4
+Size of unsigned int in bytes: 4
+Size of float in bytes: 4
+Size of double in bytes: 8
+Size of char in bytes: 1
+Size of bool in bytes: 1
+Size of int* in bytes: 8
+Size of char* in bytes: 8
+Size of double* in bytes: 8
+maximum value of int: 2147483647
+maximum value of unsigned int: 4294967295
+maximum value of float: 3.40282e+38
+maximum value of double: 1.79769e+308
+maximum value of char: 127
+Process 24874 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = breakpoint 1.1
+    frame #0: 0x0000000100000d51 debug`main at inlab4.cpp:47
+   44  		int x1 = 2147483647;
+   45  		char x2 = 127;
+   46  		double x3 = 1.79769e+308;
+-> 47  		int* p1 = &x1;
+   48  		char* p2 = &x2;
+   49  		double* p3 = &x3; 
+   50  	
+Target 0: (debug) stopped.
+(lldb) memory read `p1`
+error: memory read failed for 0x0
+(lldb) n
+Process 24874 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = step over
+    frame #0: 0x0000000100000d58 debug`main at inlab4.cpp:48
+   45  		char x2 = 127;
+   46  		double x3 = 1.79769e+308;
+   47  		int* p1 = &x1;
+-> 48  		char* p2 = &x2;
+   49  		double* p3 = &x3; 
+   50  	
+   51  	
+Target 0: (debug) stopped.
+(lldb) memory read `p1`
+0x7ffeefbff934: ff ff ff 7f 00 00 00 01 00 00 00 00 00 00 00 00  ???.............
+0x7ffeefbff944: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+(lldb) memory read --gdb-format xb
+0x7ffeefbff954: 0x00
+(lldb) memory read --gdb-format xdw
+0x7ffeefbff955: 0
+(lldb) memory read --gdb-format xg
+0x7ffeefbff959: 0x0000000000000000
+(lldb) memory read --gdb-format xg `p1`
+0x7ffeefbff934: 0x010000007fffffff
+(lldb) memory read --gdb-format 8xg `p1`
+0x7ffeefbff934: 0x010000007fffffff 0x0000000000000000
+0x7ffeefbff944: 0x0000000000000000 0x0000000000000000
+0x7ffeefbff954: 0x0000000000000000 0x0000000000000000
+0x7ffeefbff964: 0x0000000000000000 0xa235003d00000000
+(lldb) memory read --gdb-format 8xh `p1`
+0x7ffeefbff934: 0xffff 0x7fff 0x0000 0x0100 0x0000 0x0000 0x0000 0x0000
+(lldb) memory read --gdb-format 2xw `p1`
+0x7ffeefbff934: 0x7fffffff 0x01000000
+(lldb) quit
+Quitting LLDB will kill one or more processes. Do you really want to proceed: [Y/n] y
+Muchichi:lab4 lujiayi$ clang++ inlab4.cpp
+Muchichi:lab4 lujiayi$ ./a.out
+Size of int in bytes: 4
+Size of unsigned int in bytes: 4
+Size of float in bytes: 4
+Size of double in bytes: 8
+Size of char in bytes: 1
+Size of bool in bytes: 1
+Size of int* in bytes: 8
+Size of char* in bytes: 8
+Size of double* in bytes: 8
+maximum value of int: 2147483647
+maximum value of unsigned int: 4294967295
+maximum value of float: 3.40282e+38
+maximum value of double: 1.79769e+308
+maximum value of char: 127
+Abort trap: 6
+Muchichi:lab4 lujiayi$ clang++ inlab4.cpp
+Muchichi:lab4 lujiayi$ ./a.out
+Size of int in bytes: 4
+Size of unsigned int in bytes: 4
+Size of float in bytes: 4
+Size of double in bytes: 8
+Size of char in bytes: 1
+Size of bool in bytes: 1
+Size of int* in bytes: 8
+Size of char* in bytes: 8
+Size of double* in bytes: 8
+maximum value of int: 2147483647
+maximum value of unsigned int: 4294967295
+maximum value of float: 3.40282e+38
+maximum value of double: 1.79769e+308
+maximum value of char: 127
+1
+Abort trap: 6
+Muchichi:lab4 lujiayi$ clang++ -Wall -g -o debug inlab4.cpp
+inlab4.cpp:48:8: warning: unused variable 'p2' [-Wunused-variable]
+        char* p2 = &x2;
+              ^
+inlab4.cpp:43:7: warning: unused variable 'f' [-Wunused-variable]
+        bool f = false;
+             ^
+inlab4.cpp:59:7: warning: unused variable 'CharArray' [-Wunused-variable]
+        char CharArray[10] = {'a','b','c','d','e','f','g','h','i','j'};;
+             ^
+inlab4.cpp:69:7: warning: unused variable 'CharArray2D' [-Wunused-variable]
+        char CharArray2D[6][5];
+             ^
+inlab4.cpp:47:7: warning: unused variable 'p1' [-Wunused-variable]
+        int* p1 = &x1;
+             ^
+inlab4.cpp:49:10: warning: unused variable 'p3' [-Wunused-variable]
+        double* p3 = &x3; 
+                ^
+6 warnings generated.
+Muchichi:lab4 lujiayi$ lldb debug
+(lldb) target create "debug"
+rCurrent executable set to 'debug' (x86_64).
+(lldb) run
+Process 24908 launched: '/Users/lujiayi/CS2150/lab4/debug' (x86_64)
+Size of int in bytes: 4
+Size of unsigned int in bytes: 4
+Size of float in bytes: 4
+Size of double in bytes: 8
+Size of char in bytes: 1
+Size of bool in bytes: 1
+Size of int* in bytes: 8
+Size of char* in bytes: 8
+Size of double* in bytes: 8
+maximum value of int: 2147483647
+maximum value of unsigned int: 4294967295
+maximum value of float: 3.40282e+38
+maximum value of double: 1.79769e+308
+maximum value of char: 127
+1
+Process 24908 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = signal SIGABRT
+    frame #0: 0x00007fff778b5b66 libsystem_kernel.dylib`__pthread_kill + 10
+libsystem_kernel.dylib`__pthread_kill:
+->  0x7fff778b5b66 <+10>: jae    0x7fff778b5b70            ; <+20>
+    0x7fff778b5b68 <+12>: movq   %rax, %rdi
+    0x7fff778b5b6b <+15>: jmp    0x7fff778acae9            ; cerror_nocancel
+    0x7fff778b5b70 <+20>: retq   
+Target 0: (debug) stopped.
+(lldb) b 42
+Breakpoint 1: where = debug`main + 81 at inlab4.cpp:42, address = 0x0000000100000ce1
+(lldb) run
+There is a running process, kill it and restart?: [Y/n] y
+Process 24908 exited with status = 9 (0x00000009) 
+Process 24911 launched: '/Users/lujiayi/CS2150/lab4/debug' (x86_64)
+Size of int in bytes: 4
+Size of unsigned int in bytes: 4
+Size of float in bytes: 4
+Size of double in bytes: 8
+Size of char in bytes: 1
+Size of bool in bytes: 1
+Size of int* in bytes: 8
+Size of char* in bytes: 8
+Size of double* in bytes: 8
+maximum value of int: 2147483647
+maximum value of unsigned int: 4294967295
+maximum value of float: 3.40282e+38
+maximum value of double: 1.79769e+308
+maximum value of char: 127
+Process 24911 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = breakpoint 1.1
+    frame #0: 0x0000000100000ce1 debug`main at inlab4.cpp:42
+   39  		sizeOfTest();
+   40  		maxValue();
+   41  	
+-> 42  		bool t = 20;
+   43  		bool f = false;
+   44  		int x1 = 2147483647;
+   45  		char x2 = 127;
+Target 0: (debug) stopped.
+(lldb) n
+Process 24911 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = step over
+    frame #0: 0x0000000100000ce8 debug`main at inlab4.cpp:43
+   40  		maxValue();
+   41  	
+   42  		bool t = 20;
+-> 43  		bool f = false;
+   44  		int x1 = 2147483647;
+   45  		char x2 = 127;
+   46  		double x3 = 1.79769e+308;
+Target 0: (debug) stopped.
+(lldb) memory read --gdb-format 8xh `t`
+error: memory read failed for 0x0
+(lldb) memory read --gdb-format 2xw `t`
+error: memory read failed for 0x0
+(lldb) quit
+Quitting LLDB will kill one or more processes. Do you really want to proceed: [Y/n] y
+Muchichi:lab4 lujiayi$ clang++ inlab4.cpp
+Muchichi:lab4 lujiayi$ ./a.out
+Size of int in bytes: 4
+Size of unsigned int in bytes: 4
+Size of float in bytes: 4
+Size of double in bytes: 8
+Size of char in bytes: 1
+Size of bool in bytes: 1
+Size of int* in bytes: 8
+Size of char* in bytes: 8
+Size of double* in bytes: 8
+maximum value of int: 2147483647
+maximum value of unsigned int: 4294967295
+maximum value of float: 3.40282e+38
+maximum value of double: 1.79769e+308
+maximum value of char: 127
+1
+Abort trap: 6
+Muchichi:lab4 lujiayi$ clang++ inlab4.cpp
+Muchichi:lab4 lujiayi$ ./a.out
+Size of int in bytes: 4
+Size of unsigned int in bytes: 4
+Size of float in bytes: 4
+Size of double in bytes: 8
+Size of char in bytes: 1
+Size of bool in bytes: 1
+Size of int* in bytes: 8
+Size of char* in bytes: 8
+Size of double* in bytes: 8
+maximum value of int: 2147483647
+maximum value of unsigned int: 4294967295
+maximum value of float: 3.40282e+38
+maximum value of double: 1.79769e+308
+maximum value of char: 127
+1
+0
+Abort trap: 6
+Muchichi:lab4 lujiayi$ clang++ inlab4.cpp
+Muchichi:lab4 lujiayi$ ./a.out
+Size of int in bytes: 4
+Size of unsigned int in bytes: 4
+Size of float in bytes: 4
+Size of double in bytes: 8
+Size of char in bytes: 1
+Size of bool in bytes: 1
+Size of int* in bytes: 8
+Size of char* in bytes: 8
+Size of double* in bytes: 8
+maximum value of int: 2147483647
+maximum value of unsigned int: 4294967295
+maximum value of float: 3.40282e+38
+maximum value of double: 1.79769e+308
+maximum value of char: 127
+1
+0
+Muchichi:lab4 lujiayi$ clang++ inlab4.cpp
+Muchichi:lab4 lujiayi$ ./a.out
+Size of int in bytes: 4
+Size of unsigned int in bytes: 4
+Size of float in bytes: 4
+Size of double in bytes: 8
+Size of char in bytes: 1
+Size of bool in bytes: 1
+Size of int* in bytes: 8
+Size of char* in bytes: 8
+Size of double* in bytes: 8
+maximum value of int: 2147483647
+maximum value of unsigned int: 4294967295
+maximum value of float: 3.40282e+38
+maximum value of double: 1.79769e+308
+maximum value of char: 127
+1
+0
+Abort trap: 6
+Muchichi:lab4 lujiayi$ clang++ inlab4.cpp
+Muchichi:lab4 lujiayi$ ./a.out
+Size of int in bytes: 4
+Size of unsigned int in bytes: 4
+Size of float in bytes: 4
+Size of double in bytes: 8
+Size of char in bytes: 1
+Size of bool in bytes: 1
+Size of int* in bytes: 8
+Size of char* in bytes: 8
+Size of double* in bytes: 8
+maximum value of int: 2147483647
+maximum value of unsigned int: 4294967295
+maximum value of float: 3.40282e+38
+maximum value of double: 1.79769e+308
+maximum value of char: 127
+1
+0
+Abort trap: 6
+Muchichi:lab4 lujiayi$ clang++ inlab4.cpp
+Muchichi:lab4 lujiayi$ ./a.out
+Size of int in bytes: 4
+Size of unsigned int in bytes: 4
+Size of float in bytes: 4
+Size of double in bytes: 8
+Size of char in bytes: 1
+Size of bool in bytes: 1
+Size of int* in bytes: 8
+Size of char* in bytes: 8
+Size of double* in bytes: 8
+maximum value of int: 2147483647
+maximum value of unsigned int: 4294967295
+maximum value of float: 3.40282e+38
+maximum value of double: 1.79769e+308
+maximum value of char: 127
+1
+0
+Abort trap: 6
+Muchichi:lab4 lujiayi$ clang++ inlab4.cpp
+Muchichi:lab4 lujiayi$ ./a.out
+Size of int in bytes: 4
+Size of unsigned int in bytes: 4
+Size of float in bytes: 4
+Size of double in bytes: 8
+Size of char in bytes: 1
+Size of bool in bytes: 1
+Size of int* in bytes: 8
+Size of char* in bytes: 8
+Size of double* in bytes: 8
+maximum value of int: 2147483647
+maximum value of unsigned int: 4294967295
+maximum value of float: 3.40282e+38
+maximum value of double: 1.79769e+308
+maximum value of char: 127
+1
+0
+Muchichi:lab4 lujiayi$ clang++ -Wall -g -o debug inlab4.cpp
+inlab4.cpp:60:8: error: redefinition of 'f' with a different type: 'float' vs 'bool'
+        float f = 0.0;
+              ^
+inlab4.cpp:43:7: note: previous definition is here
+        bool f = 0;
+             ^
+1 error generated.
+Muchichi:lab4 lujiayi$ clang++ -Wall -g -o debug inlab4.cpp
+Muchichi:lab4 lujiayi$ gdb debug
+-bash: gdb: command not found
+Muchichi:lab4 lujiayi$ lldb debug
+(lldb) target create "debug"
+Current executable set to 'debug' (x86_64).
+(lldb) run
+Process 24972 launched: '/Users/lujiayi/CS2150/lab4/debug' (x86_64)
+Size of int in bytes: 4
+Size of unsigned int in bytes: 4
+Size of float in bytes: 4
+Size of double in bytes: 8
+Size of char in bytes: 1
+Size of bool in bytes: 1
+Size of int* in bytes: 8
+Size of char* in bytes: 8
+Size of double* in bytes: 8
+maximum value of int: 2147483647
+maximum value of unsigned int: 4294967295
+maximum value of float: 3.40282e+38
+maximum value of double: 1.79769e+308
+maximum value of char: 127
+1
+0
+0x7ffeefbff964
+???
+0x7ffeefbff958
+0
+0
+0
+0
+0
+0
+Process 24972 exited with status = 0 (0x00000000) 
+(lldb) b 65
+Breakpoint 1: where = debug`main + 474 at inlab4.cpp:65, address = 0x0000000100000daa
+(lldb) run
+Process 24975 launched: '/Users/lujiayi/CS2150/lab4/debug' (x86_64)
+Size of int in bytes: 4
+Size of unsigned int in bytes: 4
+Size of float in bytes: 4
+Size of double in bytes: 8
+Size of char in bytes: 1
+Size of bool in bytes: 1
+Size of int* in bytes: 8
+Size of char* in bytes: 8
+Size of double* in bytes: 8
+maximum value of int: 2147483647
+maximum value of unsigned int: 4294967295
+maximum value of float: 3.40282e+38
+maximum value of double: 1.79769e+308
+maximum value of char: 127
+1
+0
+0x7ffeefbff964
+???
+0x7ffeefbff958
+Process 24975 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = breakpoint 1.1
+    frame #0: 0x0000000100000daa debug`main at inlab4.cpp:65
+   62  		char c = '0';
+   63  		bool b = false;
+   64  	
+-> 65  		cout << i << endl;
+   66  		cout << ui << endl;
+   67  		cout << fl << endl;
+   68  		cout << d << endl;
+Target 0: (debug) stopped.
+(lldb) memory read --gdb-format x/xh &i
+error: invalid gdb format string 'x/xh'
+(lldb) memory read --gdb-format 8xh `i
+error: memory read failed for 0x0
+(lldb) memory read --gdb-format 8xh `i`
+error: memory read failed for 0x0
+(lldb) b58
+error: 'b58' is not a valid command.
+error: Unrecognized command 'b58'.
+(lldb) b 58
+Breakpoint 2: where = debug`main + 424 at inlab4.cpp:58, address = 0x0000000100000d78
+(lldb) run
+There is a running process, kill it and restart?: [Y/n] y
+Process 24975 exited with status = 9 (0x00000009) 
+Process 24979 launched: '/Users/lujiayi/CS2150/lab4/debug' (x86_64)
+Size of int in bytes: 4
+Size of unsigned int in bytes: 4
+Size of float in bytes: 4
+Size of double in bytes: 8
+Size of char in bytes: 1
+Size of bool in bytes: 1
+Size of int* in bytes: 8
+Size of char* in bytes: 8
+Size of double* in bytes: 8
+maximum value of int: 2147483647
+maximum value of unsigned int: 4294967295
+maximum value of float: 3.40282e+38
+maximum value of double: 1.79769e+308
+maximum value of char: 127
+1
+0
+0x7ffeefbff964
+???
+0x7ffeefbff958
+Process 24979 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = breakpoint 2.1
+    frame #0: 0x0000000100000d78 debug`main at inlab4.cpp:58
+   55  		cout << p3 << endl;
+   56  	
+   57  	
+-> 58  		int i = 0;
+   59  		unsigned int ui = 0;
+   60  		float fl = 0.0;
+   61  		double d = 0.0;
+Target 0: (debug) stopped.
+(lldb) memory read --gdb-format 8xh `i`
+error: memory read failed for 0x0
+(lldb) n
+Process 24979 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = step over
+    frame #0: 0x0000000100000d82 debug`main at inlab4.cpp:59
+   56  	
+   57  	
+   58  		int i = 0;
+-> 59  		unsigned int ui = 0;
+   60  		float fl = 0.0;
+   61  		double d = 0.0;
+   62  		char c = '0';
+Target 0: (debug) stopped.
+(lldb) memory read --gdb-format 8xh `i`
+error: memory read failed for 0x0
+(lldb) print &i
+(int *) $4 = 0x00007ffeefbff93c
+(lldb) x/x 0x00007ffeefbff93c
+0x7ffeefbff93c: 0x0000
+(lldb) x/xw 0x00007ffeefbff93c
+0x7ffeefbff93c: 0x00000000
+(lldb) print &ui
+(unsigned int *) $5 = 0x00007ffeefbff938
+(lldb) x/xw 0x00007ffeefbff938
+0x7ffeefbff938: 0x00000000
+(lldb) print &fl
+(float *) $6 = 0x00007ffeefbff934
+(lldb) x/xw 0x00007ffeefbff934
+0x7ffeefbff934: 0x00000000
+(lldb) print &d
+(double *) $7 = 0x00007ffeefbff928
+(lldb) x/xg 0x00007ffeefbff928
+0x7ffeefbff928: 0x0000000000000000
+(lldb) print &c
+(char *) $8 = 0x00007ffeefbff927 <no value available>
+(lldb) x/x 0x00007ffeefbff927
+0x7ffeefbff927: 0x0000000000000000
+(lldb) run
+There is a running process, kill it and restart?: [Y/n] y
+Process 24979 exited with status = 9 (0x00000009) 
+Process 24992 launched: '/Users/lujiayi/CS2150/lab4/debug' (x86_64)
+Size of int in bytes: 4
+Size of unsigned int in bytes: 4
+Size of float in bytes: 4
+Size of double in bytes: 8
+Size of char in bytes: 1
+Size of bool in bytes: 1
+Size of int* in bytes: 8
+Size of char* in bytes: 8
+Size of double* in bytes: 8
+maximum value of int: 2147483647
+maximum value of unsigned int: 4294967295
+maximum value of float: 3.40282e+38
+maximum value of double: 1.79769e+308
+maximum value of char: 127
+1
+0
+0x7ffeefbff964
+???
+0x7ffeefbff958
+Process 24992 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = breakpoint 2.1
+    frame #0: 0x0000000100000d78 debug`main at inlab4.cpp:58
+   55  		cout << p3 << endl;
+   56  	
+   57  	
+-> 58  		int i = 0;
+   59  		unsigned int ui = 0;
+   60  		float fl = 0.0;
+   61  		double d = 0.0;
+Target 0: (debug) stopped.
+(lldb) b 72
+Breakpoint 3: where = debug`main + 765 at inlab4.cpp:115, address = 0x0000000100000ecd
+(lldb) run
+There is a running process, kill it and restart?: [Y/n] y
+Process 24992 exited with status = 9 (0x00000009) 
+Process 24995 launched: '/Users/lujiayi/CS2150/lab4/debug' (x86_64)
+Size of int in bytes: 4
+Size of unsigned int in bytes: 4
+Size of float in bytes: 4
+Size of double in bytes: 8
+Size of char in bytes: 1
+Size of bool in bytes: 1
+Size of int* in bytes: 8
+Size of char* in bytes: 8
+Size of double* in bytes: 8
+maximum value of int: 2147483647
+maximum value of unsigned int: 4294967295
+maximum value of float: 3.40282e+38
+maximum value of double: 1.79769e+308
+maximum value of char: 127
+1
+0
+0x7ffeefbff964
+???
+0x7ffeefbff958
+Process 24995 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = breakpoint 2.1
+    frame #0: 0x0000000100000d78 debug`main at inlab4.cpp:58
+   55  		cout << p3 << endl;
+   56  	
+   57  	
+-> 58  		int i = 0;
+   59  		unsigned int ui = 0;
+   60  		float fl = 0.0;
+   61  		double d = 0.0;
+Target 0: (debug) stopped.
+(lldb) n
+Process 24995 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = step over
+    frame #0: 0x0000000100000d82 debug`main at inlab4.cpp:59
+   56  	
+   57  	
+   58  		int i = 0;
+-> 59  		unsigned int ui = 0;
+   60  		float fl = 0.0;
+   61  		double d = 0.0;
+   62  		char c = '0';
+Target 0: (debug) stopped.
+(lldb) n
+Process 24995 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = step over
+    frame #0: 0x0000000100000d8c debug`main at inlab4.cpp:60
+   57  	
+   58  		int i = 0;
+   59  		unsigned int ui = 0;
+-> 60  		float fl = 0.0;
+   61  		double d = 0.0;
+   62  		char c = '0';
+   63  		bool b = false;
+Target 0: (debug) stopped.
+(lldb) n
+Process 24995 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = step over
+    frame #0: 0x0000000100000d94 debug`main at inlab4.cpp:61
+   58  		int i = 0;
+   59  		unsigned int ui = 0;
+   60  		float fl = 0.0;
+-> 61  		double d = 0.0;
+   62  		char c = '0';
+   63  		bool b = false;
+   64  	
+Target 0: (debug) stopped.
+(lldb) n
+Process 24995 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = step over
+    frame #0: 0x0000000100000d9c debug`main at inlab4.cpp:62
+   59  		unsigned int ui = 0;
+   60  		float fl = 0.0;
+   61  		double d = 0.0;
+-> 62  		char c = '0';
+   63  		bool b = false;
+   64  	
+   65  		cout << i << endl;
+Target 0: (debug) stopped.
+(lldb) n
+Process 24995 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = step over
+    frame #0: 0x0000000100000da3 debug`main at inlab4.cpp:63
+   60  		float fl = 0.0;
+   61  		double d = 0.0;
+   62  		char c = '0';
+-> 63  		bool b = false;
+   64  	
+   65  		cout << i << endl;
+   66  		cout << ui << endl;
+Target 0: (debug) stopped.
+(lldb) n
+Process 24995 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = breakpoint 1.1
+    frame #0: 0x0000000100000daa debug`main at inlab4.cpp:65
+   62  		char c = '0';
+   63  		bool b = false;
+   64  	
+-> 65  		cout << i << endl;
+   66  		cout << ui << endl;
+   67  		cout << fl << endl;
+   68  		cout << d << endl;
+Target 0: (debug) stopped.
+(lldb) n
+0
+Process 24995 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = step over
+    frame #0: 0x0000000100000dd9 debug`main at inlab4.cpp:66
+   63  		bool b = false;
+   64  	
+   65  		cout << i << endl;
+-> 66  		cout << ui << endl;
+   67  		cout << fl << endl;
+   68  		cout << d << endl;
+   69  		cout << c << endl;
+Target 0: (debug) stopped.
+(lldb) n
+0
+Process 24995 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = step over
+    frame #0: 0x0000000100000e08 debug`main at inlab4.cpp:67
+   64  	
+   65  		cout << i << endl;
+   66  		cout << ui << endl;
+-> 67  		cout << fl << endl;
+   68  		cout << d << endl;
+   69  		cout << c << endl;
+   70  		cout << b << endl;
+Target 0: (debug) stopped.
+(lldb) n
+0
+Process 24995 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = step over
+    frame #0: 0x0000000100000e39 debug`main at inlab4.cpp:68
+   65  		cout << i << endl;
+   66  		cout << ui << endl;
+   67  		cout << fl << endl;
+-> 68  		cout << d << endl;
+   69  		cout << c << endl;
+   70  		cout << b << endl;
+   71  	
+Target 0: (debug) stopped.
+(lldb) n
+0
+Process 24995 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = step over
+    frame #0: 0x0000000100000e6a debug`main at inlab4.cpp:69
+   66  		cout << ui << endl;
+   67  		cout << fl << endl;
+   68  		cout << d << endl;
+-> 69  		cout << c << endl;
+   70  		cout << b << endl;
+   71  	
+   72  	
+Target 0: (debug) stopped.
+(lldb) n
+0
+Process 24995 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = step over
+    frame #0: 0x0000000100000e9a debug`main at inlab4.cpp:70
+   67  		cout << fl << endl;
+   68  		cout << d << endl;
+   69  		cout << c << endl;
+-> 70  		cout << b << endl;
+   71  	
+   72  	
+   73  	
+Target 0: (debug) stopped.
+(lldb) n
+0
+Process 24995 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = breakpoint 3.1
+    frame #0: 0x0000000100000ecd debug`main at inlab4.cpp:115
+   112 	
+   113 	
+   114 	
+-> 115 		return 0;
+   116 	}
+Target 0: (debug) stopped.
+(lldb) quit
+Quitting LLDB will kill one or more processes. Do you really want to proceed: [Y/n] y
+Muchichi:lab4 lujiayi$ clang++ -Wall -g -o debug inlab4.cpp
+inlab4.cpp:64:16: error: expected ';' at end of declaration
+        int* p4 = NULL:
+                      ^
+                      ;
+1 error generated.
+Muchichi:lab4 lujiayi$ clang++ -Wall -g -o debug inlab4.cpp
+inlab4.cpp:65:8: warning: unused variable 'p5' [-Wunused-variable]
+        char* p5 = NULL;
+              ^
+inlab4.cpp:64:7: warning: unused variable 'p4' [-Wunused-variable]
+        int* p4 = NULL;
+             ^
+inlab4.cpp:66:10: warning: unused variable 'p6' [-Wunused-variable]
+        double* p6 = NULL;
+                ^
+3 warnings generated.
+Muchichi:lab4 lujiayi$ lldb debug
+(lldb) target create "debug"
+Current executable set to 'debug' (x86_64).
+(lldb) b 72
+Breakpoint 1: where = debug`main + 699 at inlab4.cpp:72, address = 0x0000000100000e6b
+(lldb) run
+Process 25010 launched: '/Users/lujiayi/CS2150/lab4/debug' (x86_64)
+Size of int in bytes: 4
+Size of unsigned int in bytes: 4
+Size of float in bytes: 4
+Size of double in bytes: 8
+Size of char in bytes: 1
+Size of bool in bytes: 1
+Size of int* in bytes: 8
+Size of char* in bytes: 8
+Size of double* in bytes: 8
+maximum value of int: 2147483647
+maximum value of unsigned int: 4294967295
+maximum value of float: 3.40282e+38
+maximum value of double: 1.79769e+308
+maximum value of char: 127
+1
+0
+0x7ffeefbff964
+???
+0x7ffeefbff958
+0
+0
+0
+0
+Process 25010 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = breakpoint 1.1
+    frame #0: 0x0000000100000e6b debug`main at inlab4.cpp:72
+   69  		cout << ui << endl;
+   70  		cout << fl << endl;
+   71  		cout << d << endl;
+-> 72  		cout << c << endl;
+   73  		cout << b << endl;
+   74  	
+   75  	
+Target 0: (debug) stopped.
+(lldb) x/xb p
+error: invalid start address expression.
+error: address expression "p" evaluation failed
+(lldb) x/xb d
+error: memory read failed for 0x0
+(lldb) x/xb &c
+0x7ffeefbff927: 0x30
+(lldb) 

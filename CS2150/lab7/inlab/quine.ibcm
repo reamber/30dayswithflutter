@@ -1,0 +1,22 @@
+B000 000			nop						Amber Liu, al7bf, array.ibcm
+C007 001			jmp 	start 			skip around the variables
+0015 002	size	dw		20				length of the quine
+0000 003	a 		dw 		0				int a[]
+0001 004	one		dw		one
+0000 005	i 		dw		0				int i
+3000 006	ldit	dw		3000			load function
+3002 007	start	load	size
+6005 008			sub 	i 				if(i - length) >= 0 go to end
+E015 009			jmpl 	xit				
+D015 00A			jmpe 	xit
+3006 00B 			load	ldit			load line a[i]
+5003 00C			add		a 				
+5005 00D			add 	i 				
+400F 00E			store 	doit
+0000 00F	doit	dw		0
+1800 010 			printH					print line
+3005 011			load	i 				increment i
+5004 012			add		one					
+4005 013			store	i 				store i
+C007 014			jmp 	start			go to start of loop
+0000 015 	xit 	halt

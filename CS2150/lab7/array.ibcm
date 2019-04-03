@@ -1,0 +1,37 @@
+B000 000			nop						Amber Liu, al7bf, array.ibcm
+C00A 001			jmp 	start 			skip around the variables
+001F 002 	a 		dw		21 				int a[]
+0005 003 	size 	dw 		5 				int size = 5
+0000 004 	max		dw 		0 				max value = 0			
+0000 005 	i 		dw 		0				int i
+0000 006 	zero 	dw 		0
+0001 007 	one 	dw 		1
+5000 008 	adit 	dw 		5000
+0000 009	curr	dw		0				current
+3003 00A 	start	load	size 			acc = size - i
+6005 00B			sub		i			
+E01D 00C			jmpl	xit				if(i >= size) go to end
+D01D 00D			jmpe	xit
+3008 00E			load	adit			form instruction
+5002 00F			add 	a				
+5005 010			add		i 						
+4012 011 			store	doit 			plant instruction
+0000 012	doit	dw		0	
+4009 013 			store	curr
+6004 014			sub 	max				max value
+E01C 015			jmpl	endloop
+D01C 016			jmpe	endloop
+3009 017			load	curr 			acc = curr
+4004 018			store	max				max = acc
+3005 019	endloop	load	i 				increment i
+5007 01A			add 	1 			
+4005 01B			store	i 	
+C00C 01C			jmp 	start			go to loop
+3004 01D	xit		load 	max				print max
+1800 01E			printH
+0001 01F	a0	 	dw		1				a[0] = 1
+0002 020 	a1		dw		2				a[1] = 2
+ffff 021	a2		dw		-1				a[2] = -1	
+0004 022	a3	 	dw		4				a[3] = 4
+0003 023 	a4		dw		3				a[4] = 3	
+0000 024			halt

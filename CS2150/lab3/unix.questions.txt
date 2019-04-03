@@ -1,0 +1,7 @@
+//Amber Liu
+//al7bf
+//09/17/2018
+//unix.questions.txt
+
+1. So is a process a file that compiled and executed?
+2. will you be able to recovery directory and file after you use rm and rmdir?

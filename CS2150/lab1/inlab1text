@@ -1,0 +1,354 @@
+Last login: Mon Sep  3 21:09:46 on ttys000
+d-172-25-99-71:~ AmberLiu$ ls
+Applications		Library			pdr
+CS2150			Movies			pslog.txt
+Creative Cloud Files	Music			skyview
+Desktop			Pictures		wekafiles
+Documents		Public
+Downloads		eclipse
+d-172-25-99-71:~ AmberLiu$ cd CS2150
+d-172-25-99-71:CS2150 AmberLiu$ clang++ LifeCycle.cpp TestLifeCycle.cpp
+In file included from LifeCycle.cpp:3:
+./LifeCycle.h:13:5: error: unknown type name 'string'
+    string getName() const {
+    ^
+./LifeCycle.h:16:24: error: unknown type name 'string'
+    void setName(const string newName) {
+                       ^
+./LifeCycle.h:19:12: error: unknown type name 'ostream'
+    friend ostream& operator<<(ostream& output, const MyObject& obj);
+           ^
+./LifeCycle.h:19:32: error: unknown type name 'ostream'
+    friend ostream& operator<<(ostream& output, const MyObject& obj);
+                               ^
+./LifeCycle.h:21:5: error: unknown type name 'string'
+    string name;
+    ^
+LifeCycle.cpp:4:17: warning: using directive refers to implicitly-defined
+      namespace 'std'
+using namespace std;
+                ^
+LifeCycle.cpp:11:5: error: use of undeclared identifier 'cout'
+    cout << "MyObject Default constructor: " << *this << endl;
+    ^
+LifeCycle.cpp:11:58: error: use of undeclared identifier 'endl'
+    cout << "MyObject Default constructor: " << *this << endl;
+                                                         ^
+LifeCycle.cpp:18:5: error: use of undeclared identifier 'cout'
+    cout << "MyObject Copy constructor:    " << *this << endl;
+    ^
+LifeCycle.cpp:18:58: error: use of undeclared identifier 'endl'
+    cout << "MyObject Copy constructor:    " << *this << endl;
+                                                         ^
+LifeCycle.cpp:23:5: error: use of undeclared identifier 'cout'
+    cout << "MyObject Destructor:          " << *this << endl;
+    ^
+LifeCycle.cpp:23:58: error: use of undeclared identifier 'endl'
+    cout << "MyObject Destructor:          " << *this << endl;
+                                                         ^
+LifeCycle.cpp:27:1: error: unknown type name 'ostream'
+ostream& operator<<(ostream& output, const MyObject& obj) {
+^
+LifeCycle.cpp:27:21: error: unknown type name 'ostream'
+ostream& operator<<(ostream& output, const MyObject& obj) {
+                    ^
+LifeCycle.cpp:46:5: error: unknown type name 'string'
+    string name1 = o1.getName(), name2 = o2.getName();
+    ^
+LifeCycle.cpp:46:39: error: expected ';' at end of declaration
+    string name1 = o1.getName(), name2 = o2.getName();
+                                      ^
+                                      ;
+LifeCycle.cpp:47:19: error: use of undeclared identifier 'name2'; did you mean
+      'name1'?
+    if ( name1 == name2 )
+                  ^~~~~
+                  name1
+LifeCycle.cpp:46:12: note: 'name1' declared here
+    string name1 = o1.getName(), name2 = o2.getName();
+           ^
+LifeCycle.cpp:49:23: error: use of undeclared identifier 'name2'; did you mean
+      'name1'?
+    else if ( name1 < name2 )
+                      ^~~~~
+                      name1
+LifeCycle.cpp:46:12: note: 'name1' declared here
+    string name1 = o1.getName(), name2 = o2.getName();
+           ^
+LifeCycle.cpp:57:5: error: unknown type name 'string'
+    string name1 = o1.getName(), name2 = o2.getName();
+    ^
+LifeCycle.cpp:57:39: error: expected ';' at end of declaration
+    string name1 = o1.getName(), name2 = o2.getName();
+                                      ^
+                                      ;
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+1 warning and 20 errors generated.
+In file included from TestLifeCycle.cpp:4:
+./LifeCycle.h:13:5: error: unknown type name 'string'; did you mean
+      'std::string'?
+    string getName() const {
+    ^~~~~~
+    std::string
+/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/iosfwd:194:65: note: 
+      'std::string' declared here
+typedef basic_string<char, char_traits<char>, allocator<char> > string;
+                                                                ^
+In file included from TestLifeCycle.cpp:4:
+./LifeCycle.h:16:24: error: unknown type name 'string'; did you mean
+      'std::string'?
+    void setName(const string newName) {
+                       ^~~~~~
+                       std::string
+/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/iosfwd:194:65: note: 
+      'std::string' declared here
+typedef basic_string<char, char_traits<char>, allocator<char> > string;
+                                                                ^
+In file included from TestLifeCycle.cpp:4:
+./LifeCycle.h:19:12: error: unknown type name 'ostream'; did you mean
+      'std::ostream'?
+    friend ostream& operator<<(ostream& output, const MyObject& obj);
+           ^~~~~~~
+           std::ostream
+/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/iosfwd:147:38: note: 
+      'std::ostream' declared here
+typedef basic_ostream<char>          ostream;
+                                     ^
+In file included from TestLifeCycle.cpp:4:
+./LifeCycle.h:19:32: error: unknown type name 'ostream'; did you mean
+      'std::ostream'?
+    friend ostream& operator<<(ostream& output, const MyObject& obj);
+                               ^~~~~~~
+                               std::ostream
+/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/iosfwd:147:38: note: 
+      'std::ostream' declared here
+typedef basic_ostream<char>          ostream;
+                                     ^
+In file included from TestLifeCycle.cpp:4:
+./LifeCycle.h:21:5: error: unknown type name 'string'; did you mean
+      'std::string'?
+    string name;
+    ^~~~~~
+    std::string
+/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/iosfwd:194:65: note: 
+      'std::string' declared here
+typedef basic_string<char, char_traits<char>, allocator<char> > string;
+                                                                ^
+TestLifeCycle.cpp:17:5: error: use of undeclared identifier 'cmpMyObj'
+    cmpMyObj(o1, o3);
+    ^
+TestLifeCycle.cpp:19:5: error: use of undeclared identifier 'getMaxMyObj'
+    getMaxMyObj(o1, o3);
+    ^
+TestLifeCycle.cpp:27:9: error: use of undeclared identifier 'swapMyObj'
+        swapMyObj(o1, o2);
+        ^
+8 errors generated.
+d-172-25-99-71:CS2150 AmberLiu$ clang++ LifeCycle.cpp TestLifeCycle.cpp
+TestLifeCycle.cpp:18:5: error: use of undeclared identifier 'cmpMyObj'
+    cmpMyObj(o1, o3);
+    ^
+TestLifeCycle.cpp:20:5: error: use of undeclared identifier 'getMaxMyObj'
+    getMaxMyObj(o1, o3);
+    ^
+TestLifeCycle.cpp:28:9: error: use of undeclared identifier 'swapMyObj'
+        swapMyObj(o1, o2);
+        ^
+3 errors generated.
+d-172-25-99-71:CS2150 AmberLiu$ clang++ LifeCycle.cpp TestLifeCycle.cpp
+TestLifeCycle.cpp:18:5: error: use of undeclared identifier 'cmpMyObj'
+    cmpMyObj(o1, o3);
+    ^
+TestLifeCycle.cpp:20:5: error: use of undeclared identifier 'getMaxMyObj'
+    getMaxMyObj(o1, o3);
+    ^
+TestLifeCycle.cpp:28:9: error: use of undeclared identifier 'swapMyObj'
+        swapMyObj(o1, o2);
+        ^
+3 errors generated.
+d-172-25-99-71:CS2150 AmberLiu$ clang++ LifeCycle.cpp TestLifeCycle.cpp
+TestLifeCycle.cpp:18:5: error: use of undeclared identifier 'cmpMyObj'
+    cmpMyObj(o1, o3);
+    ^
+TestLifeCycle.cpp:20:5: error: use of undeclared identifier 'getMaxMyObj'
+    getMaxMyObj(o1, o3);
+    ^
+TestLifeCycle.cpp:28:9: error: use of undeclared identifier 'swapMyObj'
+        swapMyObj(o1, o2);
+        ^
+3 errors generated.
+d-172-25-99-71:CS2150 AmberLiu$ clang++ LifeCycle.cpp TestLifeCycle.cpp
+TestLifeCycle.cpp:18:5: error: use of undeclared identifier 'cmpMyObj'
+    cmpMyObj(o1, o3);
+    ^
+TestLifeCycle.cpp:20:5: error: use of undeclared identifier 'getMaxMyObj'
+    getMaxMyObj(o1, o3);
+    ^
+TestLifeCycle.cpp:28:9: error: use of undeclared identifier 'swapMyObj'
+        swapMyObj(o1, o2);
+        ^
+3 errors generated.
+d-172-25-99-71:CS2150 AmberLiu$ clang++ LifeCycle.cpp TestLifeCycle.cpp
+TestLifeCycle.cpp:18:5: error: use of undeclared identifier 'cmpMyObj'
+    cmpMyObj(o1, o3);
+    ^
+TestLifeCycle.cpp:20:5: error: use of undeclared identifier 'getMaxMyObj'
+    getMaxMyObj(o1, o3);
+    ^
+TestLifeCycle.cpp:28:9: error: use of undeclared identifier 'swapMyObj'
+        swapMyObj(o1, o2);
+        ^
+3 errors generated.
+d-172-25-99-71:CS2150 AmberLiu$ clang++ LifeCycle.cpp TestLifeCycle.cpp
+TestLifeCycle.cpp:18:5: error: use of undeclared identifier 'cmpMyObj'
+    cmpMyObj(o1, o3);
+    ^
+TestLifeCycle.cpp:20:5: error: use of undeclared identifier 'getMaxMyObj'
+    getMaxMyObj(o1, o3);
+    ^
+TestLifeCycle.cpp:28:9: error: use of undeclared identifier 'swapMyObj'
+        swapMyObj(o1, o2);
+        ^
+3 errors generated.
+d-172-25-99-71:CS2150 AmberLiu$ MyObject getMaxMyObj(const MyObject o1, const MyObject o2);
+-bash: syntax error near unexpected token `('
+d-172-25-99-71:CS2150 AmberLiu$ int cmpMyObj(const MyObject o1, const MyObject o2);
+-bash: syntax error near unexpected token `('
+d-172-25-99-71:CS2150 AmberLiu$ void swapMyObj(MyObject& o1, MyObject& o2);
+-bash: syntax error near unexpected token `('
+d-172-25-99-71:CS2150 AmberLiu$ clang++ LifeCycle.cpp TestLifeCycle.cpp
+TestLifeCycle.cpp:18:5: error: use of undeclared identifier 'cmpMyObj'
+    cmpMyObj(o1, o3);
+    ^
+TestLifeCycle.cpp:20:5: error: use of undeclared identifier 'getMaxMyObj'
+    getMaxMyObj(o1, o3);
+    ^
+TestLifeCycle.cpp:28:9: error: use of undeclared identifier 'swapMyObj'
+        swapMyObj(o1, o2);
+        ^
+3 errors generated.
+d-172-25-99-71:CS2150 AmberLiu$ clang++ LifeCycle.cpp TestLifeCycle.cpp
+d-172-25-99-71:CS2150 AmberLiu$ ./a.out
+MyObject Default constructor: ("I'm static, outside of main",1)
+--PART 1: Start of main--
+--Defining o1, o2(Bob)--
+MyObject Default constructor: ("--default--",2)
+MyObject Default constructor: ("Bob",3)
+--Defining o3(o2)--
+MyObject Copy constructor:    ("Bob",4)
+--Defining array of 3 objects--
+MyObject Default constructor: ("--default--",5)
+MyObject Default constructor: ("--default--",6)
+MyObject Default constructor: ("--default--",7)
+
+--PART 2: call function using call-by-value, return int--
+MyObject Copy constructor:    ("--default--",8)
+MyObject Copy constructor:    ("Bob",9)
+MyObject Destructor:          ("Bob",9)
+MyObject Destructor:          ("--default--",8)
+--call function using call-by-value, return MyObject--
+MyObject Copy constructor:    ("--default--",10)
+MyObject Copy constructor:    ("Bob",11)
+MyObject Copy constructor:    ("Bob",12)
+MyObject Destructor:          ("Bob",12)
+MyObject Destructor:          ("Bob",11)
+MyObject Destructor:          ("--default--",10)
+
+--PART 3:  o1: ("--default--",2)
+  --entering new block, define new o1(Sally)--
+MyObject Default constructor: ("Sally",13)
+  o1: ("Sally",13)	o2: ("Bob",3)
+  --call swap function using call-by-reference--
+MyObject Copy constructor:    ("Sally",14)
+MyObject Destructor:          ("Sally",14)
+  --were their values swapped?--
+  o1: ("Bob",13)	o2: ("Sally",3)
+  --leaving new block--
+MyObject Destructor:          ("Bob",13)
+o1: ("--default--",2)
+
+--PART 4: Define reference var.: { MyObject& oref=o1; } --
+-- was anything constructed/destructed?--
+
+--PART 5: new and delete--
+--use new to create one object, then array of 2 objects--
+MyObject Default constructor: ("--default--",15)
+MyObject Default constructor: ("--default--",16)
+MyObject Default constructor: ("--default--",17)
+--use delete to remove that one object--
+MyObject Destructor:          ("--default--",15)
+--use delete [] to remove that array of 2 objects --
+MyObject Destructor:          ("--default--",17)
+MyObject Destructor:          ("--default--",16)
+
+--LAST PART:  End of main--
+MyObject Destructor:          ("--default--",7)
+MyObject Destructor:          ("--default--",6)
+MyObject Destructor:          ("--default--",5)
+MyObject Destructor:          ("Bob",4)
+MyObject Destructor:          ("Sally",3)
+MyObject Destructor:          ("--default--",2)
+MyObject Destructor:          ("I'm static, outside of main",1)
+d-172-25-99-71:CS2150 AmberLiu$ clang++ LifeCycle.cpp TestLifeCycle.cpp
+d-172-25-99-71:CS2150 AmberLiu$ ./a.out
+MyObject Default constructor: ("I'm static, outside of main",1)
+--PART 1: Start of main--
+--Defining o1, o2(Bob)--
+MyObject Default constructor: ("--default--",2)
+MyObject Default constructor: ("Bob",3)
+--Defining o3(o2)--
+MyObject Copy constructor:    ("Bob",4)
+--Defining array of 3 objects--
+MyObject Default constructor: ("--default--",5)
+MyObject Default constructor: ("--default--",6)
+MyObject Default constructor: ("--default--",7)
+
+--PART 2: call function using call-by-value, return int--
+MyObject Copy constructor:    ("--default--",8)
+MyObject Copy constructor:    ("Bob",9)
+MyObject Destructor:          ("Bob",9)
+MyObject Destructor:          ("--default--",8)
+--call function using call-by-value, return MyObject--
+MyObject Copy constructor:    ("--default--",10)
+MyObject Copy constructor:    ("Bob",11)
+MyObject Copy constructor:    ("Bob",12)
+MyObject Destructor:          ("Bob",12)
+MyObject Destructor:          ("Bob",11)
+MyObject Destructor:          ("--default--",10)
+
+--PART 3:  o1: ("--default--",2)
+  --entering new block, define new o1(Sally)--
+MyObject Default constructor: ("Sally",13)
+  o1: ("Sally",13)	o2: ("Bob",3)
+  --call swap function using call-by-reference--
+MyObject Copy constructor:    ("Sally",14)
+MyObject Destructor:          ("Sally",14)
+  --were their values swapped?--
+  o1: ("Bob",13)	o2: ("Sally",3)
+  --leaving new block--
+MyObject Destructor:          ("Bob",13)
+o1: ("--default--",2)
+
+--PART 4: Define reference var.: { MyObject& oref=o1; } --
+-- was anything constructed/destructed?--
+
+--PART 5: new and delete--
+--use new to create one object, then array of 2 objects--
+MyObject Default constructor: ("--default--",15)
+MyObject Default constructor: ("--default--",16)
+MyObject Default constructor: ("--default--",17)
+--use delete to remove that one object--
+MyObject Destructor:          ("--default--",15)
+--use delete [] to remove that array of 2 objects --
+MyObject Destructor:          ("--default--",17)
+MyObject Destructor:          ("--default--",16)
+
+--LAST PART:  End of main--
+MyObject Destructor:          ("--default--",7)
+MyObject Destructor:          ("--default--",6)
+MyObject Destructor:          ("--default--",5)
+MyObject Destructor:          ("Bob",4)
+MyObject Destructor:          ("Sally",3)
+MyObject Destructor:          ("--default--",2)
+MyObject Destructor:          ("I'm static, outside of main",1)
+d-172-25-99-71:CS2150 AmberLiu$ 

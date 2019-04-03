@@ -1,0 +1,47 @@
+B000 000			nop						Amber Liu, al7bf, bubblesort.ibcm
+C00B 001			jmp 	start 			skip around the variables
+0005 002	max		dw		5				max = 5
+0000 003	zero	dw		0				
+0001 004	one		dw		1				
+0000 005	temp	dw		0				temp is 0
+002A 006	a[]		dw						array[]
+0004 007	j 		dw		4				int j = max - 1
+0000 008	i 		dw		0				int i = 0
+0000 009	curr	dw		0				curr = 0
+0000 00A	prev	dw		0				prev = 0
+5000 00B 	adit 	dw 		5000
+3002 00C	istart	load	max				for(int i = 0; i < MAX; i++)
+6008 00D			sub		i 				
+E00A 00E			jmpl 	xit				jump to exit, couldn't get to writing that
+D00A 00F			jmpe 	xit				same problem as above
+3007 010	jstart	load	j 				j = max -1; j >i; j--
+6008 011			sub 	i
+E027 012			jmpl	endj			if j<i. Couldn't write endj Confused
+D027 013			jmpe	endj			if j-i=0. Couldn't figure out endj
+300A 014			load	adit			form instruction
+5006 015			add 	a[]				
+5007 016			add		j 				a[j]
+401A 017			store	doit			store a[j] load
+6004 018			sub 	one				a[j-1]
+401C 019			store	doit2			store a[j-1]
+0000 01A	doit 	dw		0				
+4009 01B			store	curr			curr = a[j]
+0000 01C	doit2 	dw		0						
+400A 01D			store	prev			prev = a[j-1]
+3009 01E			load	curr
+600A 01F			sub		prev
+E022 020			jmpl	swap			jump to swap if curr > prev
+C027 021			jmp 	endj 			couldn't write endj 
+3009 022	swap	load	curr			curr = prev
+5006 023			add		a 				increment value in loop
+5007 024			add		j
+6004 025			sub		1				obtain prev value
+4028 026			store	swapit
+300A 027			load	prev
+0000 028	swapit	dw		0
+300A 029			load	prev
+0001 02A	a0	 	dw		1				a[0] = 1 putting values in for the array
+0002 02B 	a1		dw		2				a[1] = 2
+ffff 02C	a2		dw		-1				a[2] = -1	
+0004 02D	a3	 	dw		4				a[3] = 4
+0003 02E 	a4		dw		3				a[4] = 3
