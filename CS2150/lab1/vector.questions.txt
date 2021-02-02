@@ -1,5 +1,0 @@
-//Amber Liu, al7bf, vector.questions.txt, 09/04/2018
-//questions regarding vector collection class in c++ and the 3 files
-
-1. why did removing include iostream not cause any errors?
-2. what are vectors?

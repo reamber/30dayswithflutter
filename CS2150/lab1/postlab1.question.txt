@@ -1,5 +1,0 @@
-//Amber Liu, al7bf, postlab1.question.txt, 09/05/2018
-//postlab question
-
-1. what is stdio.h file and what does it do?
-2. what does friend class do?
